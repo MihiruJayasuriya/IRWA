@@ -1,0 +1,292 @@
+{
+ "note": "CHALLENGE set: harder paraphrases and traps, written after the first (perfect) evaluation and before any further change to the extractor.",
+ "queries": [
+  {
+   "text": "Water pressure fell to 12 PSI for about 45 minutes.",
+   "gold": [
+    [
+     "PRESSURE",
+     "12 psi"
+    ],
+    [
+     "DURATION",
+     "45 minute"
+    ]
+   ]
+  },
+  {
+   "text": "We have had no water for 2 days now.",
+   "gold": [
+    [
+     "DURATION",
+     "2 day"
+    ]
+   ]
+  },
+  {
+   "text": "the tap has been dry for 24 hrs, it is a 24-hour problem",
+   "gold": [
+    [
+     "DURATION",
+     "24 hour"
+    ]
+   ]
+  },
+  {
+   "text": "the utility loses 5,000 litres/day in zone 3",
+   "gold": [
+    [
+     "VOLUME",
+     "5000 liters"
+    ],
+    [
+     "ZONE",
+     "3"
+    ]
+   ]
+  },
+  {
+   "text": "the reservoir is at twenty percent",
+   "gold": [
+    [
+     "FACILITY",
+     "reservoir"
+    ],
+    [
+     "PERCENTAGE",
+     "20"
+    ]
+   ]
+  },
+  {
+   "text": "Zone Four has low pressure",
+   "gold": [
+    [
+     "ZONE",
+     "4"
+    ]
+   ]
+  },
+  {
+   "text": "we have entered Stage III restrictions",
+   "gold": [
+    [
+     "DROUGHT_STAGE",
+     "3"
+    ]
+   ]
+  },
+  {
+   "text": "chlorine at 0.5 mg per liter in the sample",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "chlorine"
+    ],
+    [
+     "CONCENTRATION",
+     "0.5 mg/l"
+    ]
+   ]
+  },
+  {
+   "text": "turbidity is 3 NTU and pH is 9",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "turbidity"
+    ],
+    [
+     "WATER_QUALITY",
+     "ph"
+    ]
+   ]
+  },
+  {
+   "text": "inspect the pumping stations and the hydrants in the North zone",
+   "gold": [
+    [
+     "FACILITY",
+     "pump_station"
+    ],
+    [
+     "FACILITY",
+     "hydrant"
+    ],
+    [
+     "ZONE",
+     "North"
+    ]
+   ]
+  },
+  {
+   "text": "a leak of about 7000 L/day",
+   "gold": [
+    [
+     "VOLUME",
+     "7000 liters"
+    ]
+   ]
+  },
+  {
+   "text": "reduce by 25% within the next 3 working days",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "25"
+    ],
+    [
+     "DURATION",
+     "3 day"
+    ]
+   ]
+  },
+  {
+   "text": "the meter reading has been 3 times higher for the last two weeks",
+   "gold": [
+    [
+     "FACILITY",
+     "meter"
+    ],
+    [
+     "DURATION",
+     "2 week"
+    ]
+   ]
+  },
+  {
+   "text": "a 7-day forecast for the west region shows Stage 2 risk",
+   "gold": [
+    [
+     "DURATION",
+     "7 day"
+    ],
+    [
+     "ZONE",
+     "West"
+    ],
+    [
+     "DROUGHT_STAGE",
+     "2"
+    ]
+   ]
+  },
+  {
+   "text": "tankers will arrive in 90 minutes",
+   "gold": [
+    [
+     "DURATION",
+     "90 minute"
+    ]
+   ]
+  },
+  {
+   "text": "bacterial contamination found at the treatment plant",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "bacteria"
+    ],
+    [
+     "FACILITY",
+     "treatment_plant"
+    ]
+   ]
+  },
+  {
+   "text": "the outage lasted 1.5 hours",
+   "gold": [
+    [
+     "DURATION",
+     "1.5 hour"
+    ]
+   ]
+  },
+  {
+   "text": "pressure below 2 bar at the inlet for 6 hours",
+   "gold": [
+    [
+     "PRESSURE",
+     "2 bar"
+    ],
+    [
+     "DURATION",
+     "6 hour"
+    ]
+   ]
+  },
+  {
+   "text": "an increase of 10 % over last month",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "10"
+    ]
+   ]
+  },
+  {
+   "text": "5000 people affected in area 7",
+   "gold": [
+    [
+     "ZONE",
+     "7"
+    ]
+   ]
+  },
+  {
+   "text": "it lasted 3 hours, twice a week",
+   "gold": [
+    [
+     "DURATION",
+     "3 hour"
+    ]
+   ]
+  },
+  {
+   "text": "Western Australia has 3 reservoirs",
+   "gold": [
+    [
+     "FACILITY",
+     "reservoir"
+    ]
+   ]
+  },
+  {
+   "text": "she scored 85 percent on the exam",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "85"
+    ]
+   ]
+  },
+  {
+   "text": "I live at 45 Palm Road, flat 12",
+   "gold": []
+  },
+  {
+   "text": "the pipe is 10 meters long",
+   "gold": []
+  },
+  {
+   "text": "the second stage of repairs starts next week",
+   "gold": []
+  },
+  {
+   "text": "Central Park is 5 km away",
+   "gold": []
+  },
+  {
+   "text": "call 1800 555 0199 between 9 and 5",
+   "gold": []
+  },
+  {
+   "text": "open from 8 am to 6 pm",
+   "gold": []
+  },
+  {
+   "text": "thank you for your help",
+   "gold": []
+  }
+ ]
+}

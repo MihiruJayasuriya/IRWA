@@ -1,0 +1,8 @@
+Low Water Pressure Troubleshooting Procedure
+
+Pressure at a zone inlet that stays below 15 psi for more than 30 minutes is treated as a low pressure event.
+The duty engineer should first check for closed valves and pump station failures, then look for an upstream leak
+by comparing zone flow with the 7-day average. Reservoir level and time of day must also be reviewed, because
+evening peak demand can lower pressure without any fault. If a pumping station has tripped, restart it under
+supervision and record the fault. A low pressure event that is not resolved within 12 hours must be escalated
+to the network engineering manager.

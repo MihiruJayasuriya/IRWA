@@ -1,0 +1,481 @@
+{
+ "note": "DEVELOPMENT independent NER gold set. Written and labelled BEFORE the author had read or run ner.py, so the labels do not follow the extractor's own choices. It is deliberately broader than the extractor's scope (it also labels INCIDENT and DATE_REF, and more facility words). Used to inspect errors.",
+ "guidelines": "Annotation guidelines (fixed before ner.py was read or run). Annotate the exact span text.\nZONE: 'zone 4', 'area west', 'West zone', or a capitalised bare zone name (North, South, East, West, Central); the whole span.\nDROUGHT_STAGE: 'stage 1|2|3' (or one/two/three).  PERCENTAGE: a number followed by percent / per cent / %.\nVOLUME: a number followed by liters/litres/L/kL/m3/cubic meters.\nDURATION: a number (digits, one..twelve, or a/an) followed by minutes/hours/days/weeks/months/years, including '7-day'.\nDATE_REF: yesterday, today, tomorrow, tonight, last night, this morning/afternoon/evening/week, last week, weekday names.\nFACILITY: water main, pumping/pump station, treatment plant/facility/works, reservoir, pipe/pipeline, hydrant, meter, valve, tanker, sensor, tap, dam - in their water-utility sense only.\nINCIDENT: leak/leaks/leaking/leaked/leakage, burst, flood/flooding/flooded, contamination/contaminated, outage, no water/without water/water cut, shortage,\n  low pressure/low water pressure, discoloration, brown|dirty|muddy|cloudy|rusty water, odor/odour, smell/smells.\nNOT entities: 'main road', 'Main Street', lowercase compass words ('the west'), 'meters' as a distance, verbs/nouns in a non-utility sense ('tap dance', 'to meter the flow'), 'last month'.",
+ "sentences": [
+  {
+   "id": "d01",
+   "text": "There is a pipe leak in Zone 4 and water is flooding the road.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "pipe"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "leak"
+    },
+    {
+     "type": "ZONE",
+     "text": "Zone 4"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "flooding"
+    }
+   ]
+  },
+  {
+   "id": "d02",
+   "text": "West leak abnormal flow high",
+   "entities": [
+    {
+     "type": "ZONE",
+     "text": "West"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "leak"
+    }
+   ]
+  },
+  {
+   "id": "d03",
+   "text": "Reservoir level in the North dropped below 20 percent, so declare Stage 2.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "Reservoir"
+    },
+    {
+     "type": "ZONE",
+     "text": "North"
+    },
+    {
+     "type": "PERCENTAGE",
+     "text": "20 percent"
+    },
+    {
+     "type": "DROUGHT_STAGE",
+     "text": "Stage 2"
+    }
+   ]
+  },
+  {
+   "id": "d04",
+   "text": "No water in my area since yesterday",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "No water"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "yesterday"
+    }
+   ]
+  },
+  {
+   "id": "d05",
+   "text": "A technician must be dispatched within 24 hours of a confirmed leak.",
+   "entities": [
+    {
+     "type": "DURATION",
+     "text": "24 hours"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "leak"
+    }
+   ]
+  },
+  {
+   "id": "d06",
+   "text": "Leaks exceeding 5,000 liters per day require emergency repair within 24 hours.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Leaks"
+    },
+    {
+     "type": "VOLUME",
+     "text": "5,000 liters"
+    },
+    {
+     "type": "DURATION",
+     "text": "24 hours"
+    }
+   ]
+  },
+  {
+   "id": "d07",
+   "text": "My water bill is 300 percent higher than last month.",
+   "entities": [
+    {
+     "type": "PERCENTAGE",
+     "text": "300 percent"
+    }
+   ]
+  },
+  {
+   "id": "d08",
+   "text": "Brown water is coming out of the tap in the West zone.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Brown water"
+    },
+    {
+     "type": "FACILITY",
+     "text": "tap"
+    },
+    {
+     "type": "ZONE",
+     "text": "West zone"
+    }
+   ]
+  },
+  {
+   "id": "d09",
+   "text": "The pumping station in Central tripped and pressure dropped.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "pumping station"
+    },
+    {
+     "type": "ZONE",
+     "text": "Central"
+    }
+   ]
+  },
+  {
+   "id": "d10",
+   "text": "Hydrant flushing is planned for Monday and will last two hours.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "Hydrant"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "Monday"
+    },
+    {
+     "type": "DURATION",
+     "text": "two hours"
+    }
+   ]
+  },
+  {
+   "id": "d11",
+   "text": "The reservoir sensor has shown 42.4% for 10 days.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "reservoir"
+    },
+    {
+     "type": "FACILITY",
+     "text": "sensor"
+    },
+    {
+     "type": "PERCENTAGE",
+     "text": "42.4%"
+    },
+    {
+     "type": "DURATION",
+     "text": "10 days"
+    }
+   ]
+  },
+  {
+   "id": "d12",
+   "text": "Meters are read once a month.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "Meters"
+    },
+    {
+     "type": "DURATION",
+     "text": "a month"
+    }
+   ]
+  },
+  {
+   "id": "d13",
+   "text": "Stage 1 is declared when reservoir levels fall below 30 percent.",
+   "entities": [
+    {
+     "type": "DROUGHT_STAGE",
+     "text": "Stage 1"
+    },
+    {
+     "type": "FACILITY",
+     "text": "reservoir"
+    },
+    {
+     "type": "PERCENTAGE",
+     "text": "30 percent"
+    }
+   ]
+  },
+  {
+   "id": "d14",
+   "text": "Water tastes odd and smells of chlorine since this morning.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "smells"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "this morning"
+    }
+   ]
+  },
+  {
+   "id": "d15",
+   "text": "Please send a tanker to zone 2 tonight.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "tanker"
+    },
+    {
+     "type": "ZONE",
+     "text": "zone 2"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "tonight"
+    }
+   ]
+  },
+  {
+   "id": "d16",
+   "text": "The burst water main flooded three streets last night.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "burst"
+    },
+    {
+     "type": "FACILITY",
+     "text": "water main"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "flooded"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "last night"
+    }
+   ]
+  },
+  {
+   "id": "d17",
+   "text": "Contamination was found in the treatment plant on Friday.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Contamination"
+    },
+    {
+     "type": "FACILITY",
+     "text": "treatment plant"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "Friday"
+    }
+   ]
+  },
+  {
+   "id": "d18",
+   "text": "Consumption rose 45 percent above the 7-day average.",
+   "entities": [
+    {
+     "type": "PERCENTAGE",
+     "text": "45 percent"
+    },
+    {
+     "type": "DURATION",
+     "text": "7-day"
+    }
+   ]
+  },
+  {
+   "id": "d19",
+   "text": "Flow meters must be calibrated every 6 months.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "meters"
+    },
+    {
+     "type": "DURATION",
+     "text": "6 months"
+    }
+   ]
+  },
+  {
+   "id": "d20",
+   "text": "Turn the valve, then check the pipe for a leak.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "valve"
+    },
+    {
+     "type": "FACILITY",
+     "text": "pipe"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "leak"
+    }
+   ]
+  },
+  {
+   "id": "d21",
+   "text": "Please repair the main road near the school.",
+   "entities": []
+  },
+  {
+   "id": "d22",
+   "text": "The wind is blowing from the west, about 50 meters from the office.",
+   "entities": []
+  },
+  {
+   "id": "d23",
+   "text": "She spent 5 hours on the phone with billing.",
+   "entities": [
+    {
+     "type": "DURATION",
+     "text": "5 hours"
+    }
+   ]
+  },
+  {
+   "id": "d24",
+   "text": "Zone 3 has low pressure and a shortage since Tuesday.",
+   "entities": [
+    {
+     "type": "ZONE",
+     "text": "Zone 3"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "low pressure"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "shortage"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "Tuesday"
+    }
+   ]
+  },
+  {
+   "id": "d25",
+   "text": "Emergency supply must reach 20 liters per person within 6 hours.",
+   "entities": [
+    {
+     "type": "VOLUME",
+     "text": "20 liters"
+    },
+    {
+     "type": "DURATION",
+     "text": "6 hours"
+    }
+   ]
+  },
+  {
+   "id": "d26",
+   "text": "Central and East both report dirty water.",
+   "entities": [
+    {
+     "type": "ZONE",
+     "text": "Central"
+    },
+    {
+     "type": "ZONE",
+     "text": "East"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "dirty water"
+    }
+   ]
+  },
+  {
+   "id": "d27",
+   "text": "The dam is at 85% capacity.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "dam"
+    },
+    {
+     "type": "PERCENTAGE",
+     "text": "85%"
+    }
+   ]
+  },
+  {
+   "id": "d28",
+   "text": "A leak in the pipeline caused an outage of 3 days in Region 5.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "leak"
+    },
+    {
+     "type": "FACILITY",
+     "text": "pipeline"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "outage"
+    },
+    {
+     "type": "DURATION",
+     "text": "3 days"
+    },
+    {
+     "type": "ZONE",
+     "text": "Region 5"
+    }
+   ]
+  },
+  {
+   "id": "d29",
+   "text": "Nothing to report, just a normal sentence about policy.",
+   "entities": []
+  },
+  {
+   "id": "d30",
+   "text": "Boil water notice must be issued within 1 hour and lifted after two clean samples.",
+   "entities": [
+    {
+     "type": "DURATION",
+     "text": "1 hour"
+    }
+   ]
+  },
+  {
+   "id": "d31",
+   "text": "The tap dance class starts today.",
+   "entities": [
+    {
+     "type": "DATE_REF",
+     "text": "today"
+    }
+   ]
+  }
+ ]
+}

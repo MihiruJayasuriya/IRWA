@@ -1,0 +1,126 @@
+{
+ "held_out": {
+  "A  Original (whole-doc TF-IDF)": {
+   "P@3": 0.3611111111111111,
+   "R@3": 0.8333333333333334,
+   "MRR": 0.8194444444444445,
+   "nDCG@3": 0.7849767324290156,
+   "MAP@3": 0.7430555555555555,
+   "false_alarm": 0.0,
+   "MRR_system_queries": null,
+   "MRR_natural_queries": 0.8194444444444445
+  },
+  "B  BM25, whole document": {
+   "P@3": 0.3333333333333333,
+   "R@3": 0.7916666666666666,
+   "MRR": 0.875,
+   "nDCG@3": 0.8010955993971215,
+   "MAP@3": 0.7708333333333334,
+   "false_alarm": 0.0,
+   "MRR_system_queries": null,
+   "MRR_natural_queries": 0.875
+  },
+  "C  TF-IDF, passages": {
+   "P@3": 0.3333333333333333,
+   "R@3": 0.7916666666666666,
+   "MRR": 0.875,
+   "nDCG@3": 0.8010955993971215,
+   "MAP@3": 0.7708333333333334,
+   "false_alarm": 0.0,
+   "MRR_system_queries": null,
+   "MRR_natural_queries": 0.875
+  },
+  "D  BM25, passages": {
+   "P@3": 0.3333333333333333,
+   "R@3": 0.7916666666666666,
+   "MRR": 0.875,
+   "nDCG@3": 0.8010955993971215,
+   "MAP@3": 0.7708333333333334,
+   "false_alarm": 0.0,
+   "MRR_system_queries": null,
+   "MRR_natural_queries": 0.875
+  },
+  "E  BM25, passages + expansion (shipped)": {
+   "P@3": 0.38888888888888884,
+   "R@3": 0.875,
+   "MRR": 0.9583333333333334,
+   "nDCG@3": 0.8844289327304549,
+   "MAP@3": 0.8541666666666666,
+   "false_alarm": 0.0,
+   "MRR_system_queries": null,
+   "MRR_natural_queries": 0.9583333333333334
+  },
+  "F  TF-IDF, passages + expansion": {
+   "P@3": 0.38888888888888884,
+   "R@3": 0.875,
+   "MRR": 0.9583333333333334,
+   "nDCG@3": 0.8844289327304549,
+   "MAP@3": 0.8541666666666666,
+   "false_alarm": 0.0,
+   "MRR_system_queries": null,
+   "MRR_natural_queries": 0.9583333333333334
+  }
+ },
+ "development": {
+  "A  Original (whole-doc TF-IDF)": {
+   "P@3": 0.3222222222222222,
+   "R@3": 0.85,
+   "MRR": 0.8111111111111111,
+   "nDCG@3": 0.812500223330279,
+   "MAP@3": 0.7944444444444444,
+   "false_alarm": 0.0,
+   "MRR_system_queries": 0.8,
+   "MRR_natural_queries": 0.8133333333333332
+  },
+  "B  BM25, whole document": {
+   "P@3": 0.3333333333333333,
+   "R@3": 0.85,
+   "MRR": 0.85,
+   "nDCG@3": 0.8414692315445638,
+   "MAP@3": 0.8333333333333334,
+   "false_alarm": 0.0,
+   "MRR_system_queries": 1.0,
+   "MRR_natural_queries": 0.82
+  },
+  "C  TF-IDF, passages": {
+   "P@3": 0.3555555555555555,
+   "R@3": 0.9166666666666666,
+   "MRR": 0.9111111111111111,
+   "nDCG@3": 0.903771573092182,
+   "MAP@3": 0.8944444444444444,
+   "false_alarm": 0.0,
+   "MRR_system_queries": 1.0,
+   "MRR_natural_queries": 0.8933333333333333
+  },
+  "D  BM25, passages": {
+   "P@3": 0.3333333333333333,
+   "R@3": 0.85,
+   "MRR": 0.8666666666666667,
+   "nDCG@3": 0.853771573092182,
+   "MAP@3": 0.85,
+   "false_alarm": 0.0,
+   "MRR_system_queries": 1.0,
+   "MRR_natural_queries": 0.84
+  },
+  "E  BM25, passages + expansion (shipped)": {
+   "P@3": 0.4,
+   "R@3": 1.0,
+   "MRR": 0.9777777777777777,
+   "nDCG@3": 0.9833333333333333,
+   "MAP@3": 0.9777777777777777,
+   "false_alarm": 0.0,
+   "MRR_system_queries": 1.0,
+   "MRR_natural_queries": 0.9733333333333333
+  },
+  "F  TF-IDF, passages + expansion": {
+   "P@3": 0.4,
+   "R@3": 1.0,
+   "MRR": 0.9777777777777777,
+   "nDCG@3": 0.9833333333333333,
+   "MAP@3": 0.9777777777777777,
+   "false_alarm": 0.0,
+   "MRR_system_queries": 1.0,
+   "MRR_natural_queries": 0.9733333333333333
+  }
+ }
+}

@@ -1,0 +1,118 @@
+{
+ "note": "HELD-OUT queries: labelled before tuning and never used to choose settings.",
+ "queries": [
+  {
+   "id": "h01",
+   "kind": "natural",
+   "query": "the water from my tap is cloudy and has a strange taste",
+   "relevant": [
+    "customer_complaint_handling.txt",
+    "water_quality_standards.txt"
+   ]
+  },
+  {
+   "id": "h02",
+   "kind": "natural",
+   "query": "how long until a leaking pipe gets repaired",
+   "relevant": [
+    "leak_detection_procedure.txt"
+   ]
+  },
+  {
+   "id": "h03",
+   "kind": "natural",
+   "query": "what happens when the reservoir drops below 20 percent",
+   "relevant": [
+    "drought_response_plan.txt"
+   ]
+  },
+  {
+   "id": "h04",
+   "kind": "natural",
+   "query": "who gets water first during an outage",
+   "relevant": [
+    "emergency_water_supply.txt"
+   ]
+  },
+  {
+   "id": "h05",
+   "kind": "natural",
+   "query": "my estimated bill looks wrong",
+   "relevant": [
+    "meter_reading_and_billing_disputes.txt"
+   ]
+  },
+  {
+   "id": "h06",
+   "kind": "natural",
+   "query": "is it a leak or just planned flushing",
+   "relevant": [
+    "pipe_maintenance_and_flushing.txt",
+    "leak_detection_procedure.txt"
+   ]
+  },
+  {
+   "id": "h07",
+   "kind": "natural",
+   "query": "how do residents find out the water is not safe to drink",
+   "relevant": [
+    "public_notification_boil_water.txt",
+    "water_quality_standards.txt"
+   ]
+  },
+  {
+   "id": "h08",
+   "kind": "natural",
+   "query": "gauge stuck on the same reading",
+   "relevant": [
+    "sensor_calibration_and_telemetry.txt"
+   ]
+  },
+  {
+   "id": "h09",
+   "kind": "natural",
+   "query": "pressure has been low for hours in my zone",
+   "relevant": [
+    "low_pressure_troubleshooting.txt"
+   ]
+  },
+  {
+   "id": "h10",
+   "kind": "natural",
+   "query": "how many days to resolve a complaint",
+   "relevant": [
+    "customer_complaint_handling.txt"
+   ]
+  },
+  {
+   "id": "h11",
+   "kind": "natural",
+   "query": "do factories have to use less water in a crisis",
+   "relevant": [
+    "drought_response_plan.txt",
+    "water_conservation_measures.txt"
+   ]
+  },
+  {
+   "id": "h12",
+   "kind": "natural",
+   "query": "when should the public health authority be told about contamination",
+   "relevant": [
+    "public_notification_boil_water.txt",
+    "water_quality_standards.txt"
+   ]
+  },
+  {
+   "id": "h13",
+   "kind": "out_of_scope",
+   "query": "how do I renew my passport",
+   "relevant": []
+  },
+  {
+   "id": "h14",
+   "kind": "out_of_scope",
+   "query": "what is the weather forecast for tomorrow",
+   "relevant": []
+  }
+ ]
+}

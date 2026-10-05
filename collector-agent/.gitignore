@@ -1,0 +1,11 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated at startup by logic.py (rebuilt from data/*.csv)
+historical_usage.db

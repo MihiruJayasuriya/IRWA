@@ -1,0 +1,8 @@
+Emergency Water Supply and Tanker Distribution
+
+When a zone loses its piped supply for more than 6 hours, the utility must activate the emergency supply plan
+and deploy water tankers to designated collection points. Hospitals, schools and elderly care homes are served
+first. Each resident is entitled to at least 20 liters of drinking water per day during an outage. Residents
+without water should be told where the nearest collection point is by SMS and on the public website. Status
+updates on the outage and the expected restoration time must be published every 4 hours until normal supply
+resumes. Tanker water must be tested for chlorine residual before distribution.

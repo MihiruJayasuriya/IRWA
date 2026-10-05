@@ -1,0 +1,7 @@
+Sensor Calibration and Telemetry Maintenance
+
+Flow meters and reservoir level sensors must be calibrated every 6 months and checked against a manual gauge
+reading. A sensor that reports an identical value for more than 24 hours, or a value outside its physical range,
+is treated as a suspected fault. A technician must verify a suspected sensor fault within 48 hours. Readings from
+a suspect sensor must not be used for drought staging or billing decisions until the sensor has been verified.
+Lost telemetry links should be logged as data gaps rather than filled with estimated values.

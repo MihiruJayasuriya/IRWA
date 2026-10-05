@@ -1,0 +1,217 @@
+{
+ "note": "FRESH set: written after the fixes, labelled before being run, run once.",
+ "queries": [
+  {
+   "text": "the pressure is 15psi at the inlet",
+   "gold": [
+    [
+     "PRESSURE",
+     "15 psi"
+    ]
+   ]
+  },
+  {
+   "text": "a 30-minute outage in Zone Two",
+   "gold": [
+    [
+     "DURATION",
+     "30 minute"
+    ],
+    [
+     "ZONE",
+     "2"
+    ]
+   ]
+  },
+  {
+   "text": "the leak wastes 2,500 liters an hour",
+   "gold": [
+    [
+     "VOLUME",
+     "2500 liters"
+    ]
+   ]
+  },
+  {
+   "text": "residents in the eastern district are affected",
+   "gold": []
+  },
+  {
+   "text": "we are at Stage 4 now",
+   "gold": [
+    [
+     "DROUGHT_STAGE",
+     "4"
+    ]
+   ]
+  },
+  {
+   "text": "supply returns in fifteen hours",
+   "gold": [
+    [
+     "DURATION",
+     "15 hour"
+    ]
+   ]
+  },
+  {
+   "text": "twelve percent of households have no water",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "12"
+    ]
+   ]
+  },
+  {
+   "text": "chlorine measured 4.5 mg/L at the plant outlet",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "chlorine"
+    ],
+    [
+     "CONCENTRATION",
+     "4.5 mg/l"
+    ]
+   ]
+  },
+  {
+   "text": "keep chlorine between 6.5 and 8.5 mg/l",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "chlorine"
+    ],
+    [
+     "CONCENTRATION",
+     "6.5-8.5 mg/l"
+    ]
+   ]
+  },
+  {
+   "text": "the treatment facilities and the reservoirs were inspected",
+   "gold": [
+    [
+     "FACILITY",
+     "treatment_plant"
+    ],
+    [
+     "FACILITY",
+     "reservoir"
+    ]
+   ]
+  },
+  {
+   "text": "e. coli detected in the west",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "e_coli"
+    ],
+    [
+     "ZONE",
+     "West"
+    ]
+   ]
+  },
+  {
+   "text": "my meter is broken",
+   "gold": [
+    [
+     "FACILITY",
+     "meter"
+    ]
+   ]
+  },
+  {
+   "text": "we need a 5 meter pipe",
+   "gold": []
+  },
+  {
+   "text": "Stage I alert declared for the south region",
+   "gold": [
+    [
+     "DROUGHT_STAGE",
+     "1"
+    ],
+    [
+     "ZONE",
+     "South"
+    ]
+   ]
+  },
+  {
+   "text": "back in 3 days and 4 hours",
+   "gold": [
+    [
+     "DURATION",
+     "3 day"
+    ],
+    [
+     "DURATION",
+     "4 hour"
+    ]
+   ]
+  },
+  {
+   "text": "the South Pole is very cold",
+   "gold": []
+  },
+  {
+   "text": "prices rose 12.5% this year",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "12.5"
+    ]
+   ]
+  },
+  {
+   "text": "I paid 40 dollars for the call",
+   "gold": []
+  },
+  {
+   "text": "the outage lasted a week",
+   "gold": []
+  },
+  {
+   "text": "Central Station is closed today",
+   "gold": []
+  },
+  {
+   "text": "no water in central since morning, pressure below 8 psi at the pump station",
+   "gold": [
+    [
+     "ZONE",
+     "Central"
+    ],
+    [
+     "PRESSURE",
+     "8 psi"
+    ],
+    [
+     "FACILITY",
+     "pump_station"
+    ]
+   ]
+  },
+  {
+   "text": "water use is up 20 percent in zone 5 over 14 days",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "20"
+    ],
+    [
+     "ZONE",
+     "5"
+    ],
+    [
+     "DURATION",
+     "14 day"
+    ]
+   ]
+  }
+ ]
+}

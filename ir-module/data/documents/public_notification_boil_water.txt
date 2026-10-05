@@ -1,0 +1,7 @@
+Public Notification and Boil Water Advisory Communication
+
+A boil water advisory must be issued within 1 hour of a confirmed contamination alert for the affected zone. The
+notice is sent by SMS, local radio and the utility website and must say which streets are affected, that water
+should be boiled for at least one minute before drinking, and who to call for help. The advisory stays in force
+until two consecutive clean samples are confirmed by the laboratory, after which a lift notice is published by
+the same channels. The public health authority must be informed at the same time as residents.

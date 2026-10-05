@@ -1,0 +1,7 @@
+Pipe Maintenance, Inspection and Flushing Schedule
+
+Planned maintenance windows, including hydrant flushing and pipe flushing, must be announced to customers 48
+hours in advance and entered in the maintenance calendar. Flushing raises the recorded flow for the affected zone
+and temporarily lowers pressure, so operators must check the calendar before treating a consumption spike as a
+leak. Trunk mains are inspected every 12 months and isolation valves are exercised twice a year. Any unplanned
+shutdown must be reported to the control room immediately and logged as an incident.

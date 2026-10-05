@@ -1,0 +1,461 @@
+{
+ "note": "Hand-annotated by reading the texts, BEFORE the NER code was written. Matching is on (type, key) sets per text. Annotated by the same person who designed the schema, on a small set: illustrative only.",
+ "documents": {
+  "customer_complaint_handling.txt": [
+   [
+    "DURATION",
+    "4 hour"
+   ],
+   [
+    "DURATION",
+    "24 hour"
+   ],
+   [
+    "DURATION",
+    "5 day"
+   ],
+   [
+    "FACILITY",
+    "reservoir"
+   ]
+  ],
+  "drought_response_plan.txt": [
+   [
+    "PERCENTAGE",
+    "30"
+   ],
+   [
+    "PERCENTAGE",
+    "20"
+   ],
+   [
+    "PERCENTAGE",
+    "10"
+   ],
+   [
+    "PERCENTAGE",
+    "25"
+   ],
+   [
+    "DROUGHT_STAGE",
+    "1"
+   ],
+   [
+    "DROUGHT_STAGE",
+    "2"
+   ],
+   [
+    "DROUGHT_STAGE",
+    "3"
+   ],
+   [
+    "DURATION",
+    "2 day"
+   ],
+   [
+    "FACILITY",
+    "reservoir"
+   ]
+  ],
+  "emergency_water_supply.txt": [
+   [
+    "DURATION",
+    "6 hour"
+   ],
+   [
+    "VOLUME",
+    "20 liters"
+   ],
+   [
+    "DURATION",
+    "4 hour"
+   ],
+   [
+    "WATER_QUALITY",
+    "chlorine_residual"
+   ]
+  ],
+  "leak_detection_procedure.txt": [
+   [
+    "DURATION",
+    "7 day"
+   ],
+   [
+    "PERCENTAGE",
+    "40"
+   ],
+   [
+    "DURATION",
+    "24 hour"
+   ],
+   [
+    "VOLUME",
+    "5000 liters"
+   ],
+   [
+    "DURATION",
+    "1 week"
+   ]
+  ],
+  "low_pressure_troubleshooting.txt": [
+   [
+    "PRESSURE",
+    "15 psi"
+   ],
+   [
+    "DURATION",
+    "30 minute"
+   ],
+   [
+    "FACILITY",
+    "valve"
+   ],
+   [
+    "FACILITY",
+    "pump_station"
+   ],
+   [
+    "DURATION",
+    "7 day"
+   ],
+   [
+    "FACILITY",
+    "reservoir"
+   ],
+   [
+    "DURATION",
+    "12 hour"
+   ]
+  ],
+  "meter_reading_and_billing_disputes.txt": [
+   [
+    "FACILITY",
+    "meter"
+   ],
+   [
+    "PERCENTAGE",
+    "200"
+   ],
+   [
+    "DURATION",
+    "6 month"
+   ],
+   [
+    "DURATION",
+    "3 day"
+   ],
+   [
+    "DURATION",
+    "30 day"
+   ]
+  ],
+  "pipe_maintenance_and_flushing.txt": [
+   [
+    "FACILITY",
+    "hydrant"
+   ],
+   [
+    "DURATION",
+    "48 hour"
+   ],
+   [
+    "FACILITY",
+    "trunk_main"
+   ],
+   [
+    "DURATION",
+    "12 month"
+   ],
+   [
+    "FACILITY",
+    "valve"
+   ]
+  ],
+  "public_notification_boil_water.txt": [
+   [
+    "DURATION",
+    "1 hour"
+   ],
+   [
+    "DURATION",
+    "1 minute"
+   ]
+  ],
+  "sensor_calibration_and_telemetry.txt": [
+   [
+    "FACILITY",
+    "meter"
+   ],
+   [
+    "FACILITY",
+    "reservoir"
+   ],
+   [
+    "DURATION",
+    "6 month"
+   ],
+   [
+    "DURATION",
+    "24 hour"
+   ],
+   [
+    "DURATION",
+    "48 hour"
+   ]
+  ],
+  "water_conservation_measures.txt": [
+   [
+    "DURATION",
+    "2 year"
+   ]
+  ],
+  "water_quality_standards.txt": [
+   [
+    "WATER_QUALITY",
+    "chlorine_residual"
+   ],
+   [
+    "CONCENTRATION",
+    "0.2-4 mg/l"
+   ],
+   [
+    "WATER_QUALITY",
+    "turbidity"
+   ],
+   [
+    "FACILITY",
+    "treatment_plant"
+   ],
+   [
+    "WATER_QUALITY",
+    "bacteria"
+   ]
+  ]
+ },
+ "queries": [
+  {
+   "text": "There is a pipe leak in Zone 4 and water is flooding the road.",
+   "gold": [
+    [
+     "ZONE",
+     "4"
+    ]
+   ]
+  },
+  {
+   "text": "West leak abnormal flow high",
+   "gold": [
+    [
+     "ZONE",
+     "West"
+    ]
+   ]
+  },
+  {
+   "text": "what drought stage applies when the reservoir is at 15 percent",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "15"
+    ],
+    [
+     "FACILITY",
+     "reservoir"
+    ]
+   ]
+  },
+  {
+   "text": "Stage 3 emergency restrictions",
+   "gold": [
+    [
+     "DROUGHT_STAGE",
+     "3"
+    ]
+   ]
+  },
+  {
+   "text": "Consumption of 11,398 L is 42% above the 7-day average (8,011 L)",
+   "gold": [
+    [
+     "VOLUME",
+     "11398 liters"
+    ],
+    [
+     "PERCENTAGE",
+     "42"
+    ],
+    [
+     "DURATION",
+     "7 day"
+    ],
+    [
+     "VOLUME",
+     "8011 liters"
+    ]
+   ]
+  },
+  {
+   "text": "no water in my area since yesterday",
+   "gold": []
+  },
+  {
+   "text": "pressure has been low for 3 hours in the north zone",
+   "gold": [
+    [
+     "DURATION",
+     "3 hour"
+    ],
+    [
+     "ZONE",
+     "North"
+    ]
+   ]
+  },
+  {
+   "text": "water pressure dropped below 10 psi near the pump station",
+   "gold": [
+    [
+     "PRESSURE",
+     "10 psi"
+    ],
+    [
+     "FACILITY",
+     "pump_station"
+    ]
+   ]
+  },
+  {
+   "text": "my bill went up by 300 percent this month",
+   "gold": [
+    [
+     "PERCENTAGE",
+     "300"
+    ]
+   ]
+  },
+  {
+   "text": "the chlorine level is 5 mg/l in region east",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "chlorine"
+    ],
+    [
+     "CONCENTRATION",
+     "5 mg/l"
+    ],
+    [
+     "ZONE",
+     "East"
+    ]
+   ]
+  },
+  {
+   "text": "how often are flow meters calibrated",
+   "gold": [
+    [
+     "FACILITY",
+     "meter"
+    ]
+   ]
+  },
+  {
+   "text": "the reservoir in zone 2 is at 8% and stage 3 restrictions may start within 48 hours",
+   "gold": [
+    [
+     "FACILITY",
+     "reservoir"
+    ],
+    [
+     "ZONE",
+     "2"
+    ],
+    [
+     "PERCENTAGE",
+     "8"
+    ],
+    [
+     "DROUGHT_STAGE",
+     "3"
+    ],
+    [
+     "DURATION",
+     "48 hour"
+    ]
+   ]
+  },
+  {
+   "text": "hydrant flushing scheduled for Central on friday",
+   "gold": [
+    [
+     "FACILITY",
+     "hydrant"
+    ],
+    [
+     "ZONE",
+     "Central"
+    ]
+   ]
+  },
+  {
+   "text": "a boil water notice for turbidity above 1 NTU",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "turbidity"
+    ]
+   ]
+  },
+  {
+   "text": "what is the capital of france",
+   "gold": []
+  },
+  {
+   "text": "burst pipe flooding Zone 4 for 2 days, about 6,000 liters per day lost",
+   "gold": [
+    [
+     "ZONE",
+     "4"
+    ],
+    [
+     "DURATION",
+     "2 day"
+    ],
+    [
+     "VOLUME",
+     "6000 liters"
+    ]
+   ]
+  },
+  {
+   "text": "Is the water safe? bacteria found in the west area",
+   "gold": [
+    [
+     "WATER_QUALITY",
+     "bacteria"
+    ],
+    [
+     "ZONE",
+     "West"
+    ]
+   ]
+  },
+  {
+   "text": "stage 2 restrictions apply below 20% in East",
+   "gold": [
+    [
+     "DROUGHT_STAGE",
+     "2"
+    ],
+    [
+     "PERCENTAGE",
+     "20"
+    ],
+    [
+     "ZONE",
+     "East"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,275 @@
+{
+ "note": "Hand-labelled by reading the 11 sample documents. Document-level binary relevance. Labels were fixed before any retrieval system was run. Small and self-authored: illustrative only.",
+ "queries": [
+  {
+   "id": "q01",
+   "kind": "system",
+   "query": "West leak abnormal flow high",
+   "relevant": [
+    "leak_detection_procedure.txt"
+   ]
+  },
+  {
+   "id": "q02",
+   "kind": "system",
+   "query": "suspected leak flow exceeds rolling average consumption leak detection",
+   "relevant": [
+    "leak_detection_procedure.txt"
+   ]
+  },
+  {
+   "id": "q03",
+   "kind": "system",
+   "query": "drought response plan reservoir capacity stage restrictions",
+   "relevant": [
+    "drought_response_plan.txt"
+   ]
+  },
+  {
+   "id": "q04",
+   "kind": "system",
+   "query": "abnormal flow exceeds rolling average leak detection",
+   "relevant": [
+    "leak_detection_procedure.txt"
+   ]
+  },
+  {
+   "id": "q05",
+   "kind": "system",
+   "query": "reservoir level sensor reporting the same value for days",
+   "relevant": [
+    "sensor_calibration_and_telemetry.txt"
+   ]
+  },
+  {
+   "id": "q06",
+   "kind": "natural",
+   "query": "what drought stage applies when the reservoir is at 15 percent",
+   "relevant": [
+    "drought_response_plan.txt"
+   ]
+  },
+  {
+   "id": "q07",
+   "kind": "natural",
+   "query": "brown water coming from my tap",
+   "relevant": [
+    "customer_complaint_handling.txt",
+    "water_quality_standards.txt"
+   ]
+  },
+  {
+   "id": "q08",
+   "kind": "natural",
+   "query": "pipe burst near the school and water is flooding the street",
+   "relevant": [
+    "leak_detection_procedure.txt"
+   ]
+  },
+  {
+   "id": "q09",
+   "kind": "natural",
+   "query": "no water in my area since yesterday",
+   "relevant": [
+    "emergency_water_supply.txt"
+   ]
+  },
+  {
+   "id": "q10",
+   "kind": "natural",
+   "query": "very low water pressure at my house",
+   "relevant": [
+    "low_pressure_troubleshooting.txt",
+    "customer_complaint_handling.txt"
+   ]
+  },
+  {
+   "id": "q11",
+   "kind": "natural",
+   "query": "my water bill is three times higher than normal",
+   "relevant": [
+    "meter_reading_and_billing_disputes.txt",
+    "customer_complaint_handling.txt"
+   ]
+  },
+  {
+   "id": "q12",
+   "kind": "natural",
+   "query": "how often must water quality be tested",
+   "relevant": [
+    "water_quality_standards.txt"
+   ]
+  },
+  {
+   "id": "q13",
+   "kind": "natural",
+   "query": "when is a boil water notice required",
+   "relevant": [
+    "water_quality_standards.txt",
+    "public_notification_boil_water.txt"
+   ]
+  },
+  {
+   "id": "q14",
+   "kind": "natural",
+   "query": "how are residents told about a boil water advisory",
+   "relevant": [
+    "public_notification_boil_water.txt"
+   ]
+  },
+  {
+   "id": "q15",
+   "kind": "natural",
+   "query": "can I water my lawn during a drought",
+   "relevant": [
+    "drought_response_plan.txt",
+    "water_conservation_measures.txt"
+   ]
+  },
+  {
+   "id": "q16",
+   "kind": "natural",
+   "query": "how often are flow meters calibrated",
+   "relevant": [
+    "sensor_calibration_and_telemetry.txt"
+   ]
+  },
+  {
+   "id": "q17",
+   "kind": "natural",
+   "query": "why did consumption spike during hydrant flushing",
+   "relevant": [
+    "pipe_maintenance_and_flushing.txt"
+   ]
+  },
+  {
+   "id": "q18",
+   "kind": "natural",
+   "query": "how quickly must a technician be dispatched for a confirmed leak",
+   "relevant": [
+    "leak_detection_procedure.txt"
+   ]
+  },
+  {
+   "id": "q19",
+   "kind": "natural",
+   "query": "how fast must customer complaints be answered",
+   "relevant": [
+    "customer_complaint_handling.txt"
+   ]
+  },
+  {
+   "id": "q20",
+   "kind": "natural",
+   "query": "industrial users must cut consumption in an emergency",
+   "relevant": [
+    "drought_response_plan.txt"
+   ]
+  },
+  {
+   "id": "q21",
+   "kind": "natural",
+   "query": "where can residents collect water when supply is cut off",
+   "relevant": [
+    "emergency_water_supply.txt"
+   ]
+  },
+  {
+   "id": "q22",
+   "kind": "natural",
+   "query": "acceptable chlorine level in drinking water",
+   "relevant": [
+    "water_quality_standards.txt"
+   ]
+  },
+  {
+   "id": "q23",
+   "kind": "natural",
+   "query": "how can households reduce water use",
+   "relevant": [
+    "water_conservation_measures.txt",
+    "drought_response_plan.txt"
+   ]
+  },
+  {
+   "id": "q24",
+   "kind": "natural",
+   "query": "how much notice is given before planned maintenance",
+   "relevant": [
+    "pipe_maintenance_and_flushing.txt"
+   ]
+  },
+  {
+   "id": "q25",
+   "kind": "natural",
+   "query": "can I ask for my meter to be tested",
+   "relevant": [
+    "meter_reading_and_billing_disputes.txt"
+   ]
+  },
+  {
+   "id": "q26",
+   "kind": "natural",
+   "query": "water smells strange",
+   "relevant": [
+    "customer_complaint_handling.txt"
+   ]
+  },
+  {
+   "id": "q27",
+   "kind": "natural",
+   "query": "pump station failure and pressure drop",
+   "relevant": [
+    "low_pressure_troubleshooting.txt"
+   ]
+  },
+  {
+   "id": "q28",
+   "kind": "natural",
+   "query": "Stage 3 emergency restrictions",
+   "relevant": [
+    "drought_response_plan.txt"
+   ]
+  },
+  {
+   "id": "q29",
+   "kind": "natural",
+   "query": "sensor readings should not be used until verified",
+   "relevant": [
+    "sensor_calibration_and_telemetry.txt"
+   ]
+  },
+  {
+   "id": "q30",
+   "kind": "natural",
+   "query": "tanker water testing before distribution",
+   "relevant": [
+    "emergency_water_supply.txt"
+   ]
+  },
+  {
+   "id": "q31",
+   "kind": "out_of_scope",
+   "query": "what is the capital of france",
+   "relevant": []
+  },
+  {
+   "id": "q32",
+   "kind": "out_of_scope",
+   "query": "best recipe for chocolate cake",
+   "relevant": []
+  },
+  {
+   "id": "q33",
+   "kind": "out_of_scope",
+   "query": "who won the football world cup",
+   "relevant": []
+  },
+  {
+   "id": "q34",
+   "kind": "out_of_scope",
+   "query": "how do I reset my email password",
+   "relevant": []
+  }
+ ]
+}

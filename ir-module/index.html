@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IR Module - Water Policy Search</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 820px; margin: 40px auto; background: #f5f5f5; color: #222; }
+  h1 { font-size: 22px; }
+  .card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+  #status-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: gray; margin-right: 6px; }
+  .ok { background: #2ecc71 !important; }
+  .err { background: #e74c3c !important; }
+  input[type=text], input[type=password], select { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+  #query-input { width: 68%; }
+  button { padding: 8px 16px; border: none; border-radius: 4px; background: #2980b9; color: white; cursor: pointer; }
+  button:hover { background: #1f6391; }
+  .options { font-size: 13px; color: #555; margin-top: 10px; }
+  .options label { margin-right: 16px; }
+  .result { border-left: 4px solid #2980b9; padding: 10px 14px; margin: 12px 0; background: #f9f9f9; }
+  .result h4 { margin: 0 0 4px 0; }
+  .file { font-weight: normal; font-size: 12px; color: #777; margin-left: 6px; }
+  .bar { display: inline-block; width: 90px; height: 8px; background: #ddd; border-radius: 4px; vertical-align: middle; margin: 0 6px 0 10px; }
+  .bar > span { display: block; height: 100%; background: #2980b9; border-radius: 4px; }
+  .snippet { font-size: 14px; color: #333; margin-top: 6px; line-height: 1.45; }
+  mark { background: #fff3a3; padding: 0 1px; }
+  .why { font-size: 12px; color: #666; margin-top: 6px; }
+  .analysis { font-size: 12px; color: #666; margin-top: 12px; }
+  .ents { margin-top: 8px; font-size: 12px; color: #444; }
+  .ent { display: inline-block; background: #eaf3fb; border: 1px solid #c5dcef; border-radius: 10px; padding: 1px 8px; margin: 2px 4px 2px 0; }
+  .ent.hit { background: #e6f6ea; border-color: #b7dfc0; font-weight: bold; }
+  .abstain { background: #fff7e6; border-left: 4px solid #e6a23c; padding: 10px 14px; margin: 12px 0; }
+  .examples { font-size: 13px; color: #666; margin-top: 10px; }
+  .examples span { cursor: pointer; color: #2980b9; text-decoration: underline; margin-right: 12px; }
+</style>
+</head>
+<body>
+
+  <h1>Information Retrieval Module - Water Policy Search</h1>
+
+  <div class="card">
+    <span id="status-dot"></span><span id="status-text">Checking connection...</span>
+    <div id="log" style="font-size:13px;color:#666;margin-top:6px;"></div>
+  </div>
+
+  <div class="card">
+    <h3>Authentication</h3>
+    <input type="password" id="api-key-input" placeholder="Paste X-API-Key" autocomplete="off" style="width:60%;">
+    <div style="font-size:12px;color:#666;margin-top:6px;">The key is kept in memory only and is never stored in this file.</div>
+  </div>
+
+  <div class="card">
+    <h3>Search Policy Documents</h3>
+    <input type="text" id="query-input" placeholder="Ask in your own words, e.g. brown water coming from my tap"
+           value="brown water coming from my tap">
+    <button onclick="runSearch()">Search</button>
+
+    <div class="options">
+      <label>Ranking:
+        <select id="method"><option value="bm25">BM25 (default)</option><option value="tfidf">TF-IDF</option></select>
+      </label>
+      <label><input type="checkbox" id="expand" checked> Expand query with domain thesaurus</label>
+    </div>
+
+    <div class="examples">
+      Try:
+      <span onclick="setQuery('brown water coming from my tap')">brown water</span>
+      <span onclick="setQuery('my water bill is three times higher than normal')">high bill</span>
+      <span onclick="setQuery('what happens when the reservoir drops below 20 percent')">drought stage</span>
+      <span onclick="setQuery('no water in my area since yesterday')">no water</span>
+      <span onclick="setQuery('reservoir in zone 2 is at 8 percent, stage 3 restrictions may start within 48 hours')">entities</span>
+      <span onclick="setQuery('what is the capital of france')">out of scope</span>
+    </div>
+
+    <div id="results"></div>
+  </div>
+
+<script>
+  const API_BASE = "http://localhost:8003";
+  // The API key is typed into the page by the operator; it is never hardcoded here.
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;     // textContent: document text is never parsed as HTML
+    return e;
+  }
+
+  function setQuery(text) {
+    document.getElementById("query-input").value = text;
+    runSearch();
+  }
+
+  async function checkStatus() {
+    const dot = document.getElementById("status-dot");
+    const text = document.getElementById("status-text");
+    const log = document.getElementById("log");
+    try {
+      const res = await fetch(`${API_BASE}/ir/status`);
+      const data = await res.json();
+      dot.className = "ok";
+      text.textContent = "Connected to IR Module";
+      log.textContent = `${data.documents_indexed} documents, ${data.passages_indexed} passages, ${data.vocabulary_size} terms indexed`;
+    } catch (err) {
+      dot.className = "err";
+      text.textContent = "Cannot reach IR Module (is it running on port 8003?)";
+      log.textContent = err.message;
+    }
+  }
+
+  // Small badges for recognised entities, built as DOM nodes (no innerHTML).
+  function entityBadges(list, label, hits) {
+    if (!list || !list.length) return null;
+    const box = el("div", "ents", label + " ");
+    const hitKeys = new Set((hits || []).map(h => h.type + "|" + h.normalized));
+    for (const e of list) {
+      const badge = el("span", "ent" + (hitKeys.has(e.type + "|" + e.normalized) ? " hit" : ""),
+                       `${e.type}: ${e.normalized}${e.per ? " per " + e.per : ""}`);
+      badge.title = `"${e.text}"`;
+      box.append(badge);
+    }
+    return box;
+  }
+
+  // Wrap the words that matched the query in <mark>, building DOM nodes (no innerHTML).
+  function highlight(container, text, terms) {
+    const wanted = new Set(terms);
+    for (const part of text.match(/[A-Za-z0-9.]+|[^A-Za-z0-9.]+/g) || []) {
+      if (wanted.has(part.toLowerCase())) container.append(el("mark", "", part));
+      else container.append(document.createTextNode(part));
+    }
+  }
+
+  async function runSearch() {
+    const query = document.getElementById("query-input").value.trim();
+    const box = document.getElementById("results");
+    const key = document.getElementById("api-key-input").value.trim();
+    box.replaceChildren();
+    if (!query) return;
+    if (!key) { box.append(el("p", "", "Enter the API key first.")); return; }
+
+    const params = new URLSearchParams({
+      query, method: document.getElementById("method").value,
+      expand: document.getElementById("expand").checked,
+    });
+    try {
+      const res = await fetch(`${API_BASE}/ir/search?${params}`, { headers: { "X-API-Key": key } });
+      const data = await res.json();
+      if (!res.ok) { box.append(el("p", "", "Error: " + (data.detail || res.statusText))); return; }
+
+      // How the query was understood (transparency)
+      const notes = [`terms used: ${data.query_terms.join(", ") || "none"}`];
+      if (data.expanded_terms.length) notes.push("thesaurus added: " + data.expanded_terms.map(e => `${e.term} (from "${e.from}")`).join(", "));
+      if (data.unmatched_terms.length) notes.push("not found in any document: " + data.unmatched_terms.join(", "));
+      box.append(el("div", "analysis", notes.join("  |  ")));
+      const qBadges = entityBadges(data.entities, "Entities recognised in your question:");
+      if (qBadges) box.append(qBadges);
+
+      if (data.abstained) {
+        box.append(el("div", "abstain", data.note || "No matching documents found."));
+        return;
+      }
+      for (const r of data.results) {
+        const card = el("div", "result");
+        const h = el("h4", "", r.title);
+        h.append(el("span", "file", r.document));
+        const bar = el("span", "bar"); const fill = el("span"); fill.style.width = Math.round(r.score * 100) + "%"; bar.append(fill);
+        h.append(bar, document.createTextNode(`relevance ${r.score}`));
+        const snip = el("div", "snippet");
+        highlight(snip, r.snippet, r.highlight_terms);
+        const why = [`matched: ${r.matched_terms.join(", ") || "-"}`];
+        if (r.expanded_matches.length) why.push("via thesaurus: " + r.expanded_matches.map(e => `${e.term} (from "${e.from}")`).join(", "));
+        why.push(`${r.method} raw score ${r.raw_score}`, `passage ${r.passage_id}`);
+        card.append(h, snip);
+        const pBadges = entityBadges(r.entities, "Facts in this passage (green = also in your question):", r.entity_matches);
+        if (pBadges) card.append(pBadges);
+        card.append(el("div", "why", why.join("  |  ")));
+        box.append(card);
+      }
+    } catch (err) {
+      box.append(el("p", "", "Search failed: " + err.message));
+    }
+  }
+
+  checkStatus();
+</script>
+
+</body>
+</html>

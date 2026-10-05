@@ -1,0 +1,312 @@
+{
+ "note": "HELD-OUT independent NER gold set. Written and labelled BEFORE the author had read or run ner.py, so the labels do not follow the extractor's own choices. It is deliberately broader than the extractor's scope (it also labels INCIDENT and DATE_REF, and more facility words). Run once, after the dev results; never used to change a rule.",
+ "guidelines": "Annotation guidelines (fixed before ner.py was read or run). Annotate the exact span text.\nZONE: 'zone 4', 'area west', 'West zone', or a capitalised bare zone name (North, South, East, West, Central); the whole span.\nDROUGHT_STAGE: 'stage 1|2|3' (or one/two/three).  PERCENTAGE: a number followed by percent / per cent / %.\nVOLUME: a number followed by liters/litres/L/kL/m3/cubic meters.\nDURATION: a number (digits, one..twelve, or a/an) followed by minutes/hours/days/weeks/months/years, including '7-day'.\nDATE_REF: yesterday, today, tomorrow, tonight, last night, this morning/afternoon/evening/week, last week, weekday names.\nFACILITY: water main, pumping/pump station, treatment plant/facility/works, reservoir, pipe/pipeline, hydrant, meter, valve, tanker, sensor, tap, dam - in their water-utility sense only.\nINCIDENT: leak/leaks/leaking/leaked/leakage, burst, flood/flooding/flooded, contamination/contaminated, outage, no water/without water/water cut, shortage,\n  low pressure/low water pressure, discoloration, brown|dirty|muddy|cloudy|rusty water, odor/odour, smell/smells.\nNOT entities: 'main road', 'Main Street', lowercase compass words ('the west'), 'meters' as a distance, verbs/nouns in a non-utility sense ('tap dance', 'to meter the flow'), 'last month'.",
+ "sentences": [
+  {
+   "id": "h01",
+   "text": "There is a burst pipe outside my house in Zone 1.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "burst"
+    },
+    {
+     "type": "FACILITY",
+     "text": "pipe"
+    },
+    {
+     "type": "ZONE",
+     "text": "Zone 1"
+    }
+   ]
+  },
+  {
+   "id": "h02",
+   "text": "Reservoir at 9 percent means Stage 3 restrictions for South.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "Reservoir"
+    },
+    {
+     "type": "PERCENTAGE",
+     "text": "9 percent"
+    },
+    {
+     "type": "DROUGHT_STAGE",
+     "text": "Stage 3"
+    },
+    {
+     "type": "ZONE",
+     "text": "South"
+    }
+   ]
+  },
+  {
+   "id": "h03",
+   "text": "The valve at the pump station failed this afternoon.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "valve"
+    },
+    {
+     "type": "FACILITY",
+     "text": "pump station"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "this afternoon"
+    }
+   ]
+  },
+  {
+   "id": "h04",
+   "text": "We have had no water for two days.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "no water"
+    },
+    {
+     "type": "DURATION",
+     "text": "two days"
+    }
+   ]
+  },
+  {
+   "id": "h05",
+   "text": "Water main repairs will take about 8 hours, starting on Wednesday.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "Water main"
+    },
+    {
+     "type": "DURATION",
+     "text": "8 hours"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "Wednesday"
+    }
+   ]
+  },
+  {
+   "id": "h06",
+   "text": "My bill shows 12,000 liters used, which is 250 percent of normal.",
+   "entities": [
+    {
+     "type": "VOLUME",
+     "text": "12,000 liters"
+    },
+    {
+     "type": "PERCENTAGE",
+     "text": "250 percent"
+    }
+   ]
+  },
+  {
+   "id": "h07",
+   "text": "Odour and cloudy water reported in the East area.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Odour"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "cloudy water"
+    },
+    {
+     "type": "ZONE",
+     "text": "East area"
+    }
+   ]
+  },
+  {
+   "id": "h08",
+   "text": "Send the tanker to North zone before tomorrow.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "tanker"
+    },
+    {
+     "type": "ZONE",
+     "text": "North zone"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "tomorrow"
+    }
+   ]
+  },
+  {
+   "id": "h09",
+   "text": "Sensor drift was found at the treatment facility last week.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "Sensor"
+    },
+    {
+     "type": "FACILITY",
+     "text": "treatment facility"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "last week"
+    }
+   ]
+  },
+  {
+   "id": "h10",
+   "text": "The company's main office is on Main Street.",
+   "entities": []
+  },
+  {
+   "id": "h11",
+   "text": "He drove west for 30 minutes.",
+   "entities": [
+    {
+     "type": "DURATION",
+     "text": "30 minutes"
+    }
+   ]
+  },
+  {
+   "id": "h12",
+   "text": "Flooding near hydrant 12 has stopped.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Flooding"
+    },
+    {
+     "type": "FACILITY",
+     "text": "hydrant"
+    }
+   ]
+  },
+  {
+   "id": "h13",
+   "text": "Leakage of about 8 kL was recorded in Central.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Leakage"
+    },
+    {
+     "type": "VOLUME",
+     "text": "8 kL"
+    },
+    {
+     "type": "ZONE",
+     "text": "Central"
+    }
+   ]
+  },
+  {
+   "id": "h14",
+   "text": "Stage two applies when levels fall below 20 percent.",
+   "entities": [
+    {
+     "type": "DROUGHT_STAGE",
+     "text": "Stage two"
+    },
+    {
+     "type": "PERCENTAGE",
+     "text": "20 percent"
+    }
+   ]
+  },
+  {
+   "id": "h15",
+   "text": "Please meter the flow every 15 minutes.",
+   "entities": [
+    {
+     "type": "DURATION",
+     "text": "15 minutes"
+    }
+   ]
+  },
+  {
+   "id": "h16",
+   "text": "Contaminated samples in area 3 were retested yesterday.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Contaminated"
+    },
+    {
+     "type": "ZONE",
+     "text": "area 3"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "yesterday"
+    }
+   ]
+  },
+  {
+   "id": "h17",
+   "text": "Complaints about low water pressure rose after the outage on Monday.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "low water pressure"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "outage"
+    },
+    {
+     "type": "DATE_REF",
+     "text": "Monday"
+    }
+   ]
+  },
+  {
+   "id": "h18",
+   "text": "The pipeline inspection is done every 12 months.",
+   "entities": [
+    {
+     "type": "FACILITY",
+     "text": "pipeline"
+    },
+    {
+     "type": "DURATION",
+     "text": "12 months"
+    }
+   ]
+  },
+  {
+   "id": "h19",
+   "text": "Nothing unusual to report.",
+   "entities": []
+  },
+  {
+   "id": "h20",
+   "text": "Rusty water and a bad smell at 5 liters per minute flow in zone 5.",
+   "entities": [
+    {
+     "type": "INCIDENT",
+     "text": "Rusty water"
+    },
+    {
+     "type": "INCIDENT",
+     "text": "smell"
+    },
+    {
+     "type": "VOLUME",
+     "text": "5 liters"
+    },
+    {
+     "type": "ZONE",
+     "text": "zone 5"
+    }
+   ]
+  }
+ ]
+}

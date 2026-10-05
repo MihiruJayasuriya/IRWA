@@ -1,0 +1,7 @@
+Meter Reading and Billing Dispute Policy
+
+Customer meters are read once a month. When a meter cannot be read the bill is estimated and clearly marked as
+an estimate, and the customer may ask for a meter test at no cost if they doubt the reading. Any bill that is
+more than 200 percent of the customer's six month average is reviewed automatically for an internal leak before
+it is issued. If a hidden leak on the customer's property is confirmed, the excess charge is reduced according to
+the leak adjustment rules. Billing disputes must be acknowledged within 3 working days and resolved within 30 days.
